@@ -35,3 +35,7 @@ This project simplifies the complex task of email threat detection with an autom
 ![Getting Started](https://github.com/user-attachments/assets/6b893dc2-05ce-4e10-a785-bb8cf9c90244)
 ![Installation](https://github.com/user-attachments/assets/e7a9293d-3a8f-4f77-b06b-c1040ce5b356)
 
+**Sample Usage:**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+![legit](https://github.com/user-attachments/assets/7309d55b-b26a-4b4d-9d01-7edae3da67e4)
+![phishing](https://github.com/user-attachments/assets/be54fc7f-59bf-404d-908d-67c9a089fd72)
