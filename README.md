@@ -1,109 +1,37 @@
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import string
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-nltk.download('punkt')
-nltk.download('stopwords')
+![title](https://github.com/user-attachments/assets/0b0345bc-2070-47d7-a918-65c6c0307af8)
+**Table Of Contents:**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Overview
 
-def clean_text(text):
-    """
-    Cleans the input text by removing punctuation, converting to lowercase,
-    and removing stopwords.
-    
-    Args:
-        text (str): The input text to clean.
-        
-    Returns:
-        str: The cleaned text.
-    """
-    # Tokenize the text
-    tokens = word_tokenize(text)
-    
-    # Remove punctuation and convert to lowercase
-    tokens = [word.lower() for word in tokens if word.isalpha()]
-    
-    # Remove stopwords
-    stop_words = set(stopwords.words('english'))
-    cleaned_tokens = [word for word in tokens if word not in stop_words]
-    
-    return ' '.join(cleaned_tokens)
+-Getting Started
 
-# Example data
-data = {
-    "text": [
-        "Dear user, your account has been compromised. Click here to secure it.",
-        "Meeting scheduled for tomorrow at 10 AM.",
-        "Congratulations! You've won a prize. Claim it now.",
-        "Please review the attached document for your records.",
-        "Urgent: Your payment is overdue. Update your information immediately.",
-        "Join us for a webinar on data science next week.",
-        "Your subscription has been renewed successfully.",
-        "Verify your identity to continue using our services.",
-        "Limited time offer: Get 50 percent off your next purchase!",
-        "Your package has been shipped and is on its way.",
-        "Security alert: Unusual login detected. Check your account.",
-        "Reminder: Your appointment is scheduled for next Monday.",
-        "Exclusive deal just for you! Click to learn more.",
-        "Your account statement is ready for viewing.",
-        "Action required: Update your billing information.",
-        "Invitation to connect on LinkedIn.",
-        "Your password will expire soon. Change it now.",
-        "Thank you for your purchase! Your order is confirmed.",
-        "Alert: Suspicious activity detected in your account.",
-        "Join our community and start networking today!"
-    ],
-    "label": [1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]  # 1 = Phishing, 0 = Legitimate
-}
+-Prerequisites
 
-df = pd.DataFrame(data)
+-Installation
 
-# Clean the text column
-df["cleaned_text"] = df["text"].apply(clean_text)
+-Usage
 
-# Vectorize the text data
-vectorizer = TfidfVectorizer(max_features=1000)
-X = vectorizer.fit_transform(df["cleaned_text"])
+-Testing
 
-# Model Training
-X_train, X_test, y_train, y_test = train_test_split(X, df["label"], test_size=0.2, stratify=df["label"], random_state=42)
-clf = RandomForestClassifier(random_state=42)
-clf.fit(X_train, y_train)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Overview:**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The Phishing Email Analyzer is a machine learning-powered tool designed to efficiently detect phishing emails. It preprocesses email content, transforms it into meaningful features, and trains a Random Forest classifier to identify malicious messages. The system also offers a user-friendly GUI for real-time email assessment, making it easy for developers and security teams to integrate and deploy within broader cybersecurity architectures. 
 
-# Predictions
-y_pred = clf.predict(X_test)
-print(classification_report(y_test, y_pred, zero_division=1))
+**Why Phishing Email Analyzer?**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This project simplifies the complex task of email threat detection with an automated, scalable solution. The core features include:
 
-def predict_email(text):
-    text_clean = clean_text(text)
-    vec = vectorizer.transform([text_clean])
-    prediction = clf.predict(vec)
-    return "Phishing" if prediction == 1 else "Legitimate"
+-**Text Preprocessing & Feature Extraction:** Converts raw email content into structured data suitable for machine learning. 
 
-# Example usage
-print(predict_email("Please verify your account information"))
+-**Real-Time Prediction GUI:** Provides an intuitive interface for instant email legitimacy assessment.
 
-#UI
-import tkinter as tk     
-def predict():
-    email_text = text_entry.get("1.0", tk.END)
-    prediction = predict_email(email_text)
-    result_label.config(text=f"Prediction: {prediction}")
+-**Model Training & evaluation:** Facilitates easy training and fine-tuning of the classifier.
 
-root = tk.Tk()
-root.title("Phishing Email Predictor")
+-**Seamless Integration: ** Fits smoothly into existing email security workflows for proactive defense. 
 
-text_entry = tk.Text(root, height=10, width=50, bg="lightgrey", fg="black", font=("Arial", 12))
-text_entry.pack()
+-**Explanability & Insights:** Offers transparency into detection decisions, aiding security analysis.
 
-predict_button = tk.Button(root, text="Predict", command=predict, bg="blue", fg="white", font=("Arial", 12))
-predict_button.pack()
+![Getting Started](https://github.com/user-attachments/assets/6b893dc2-05ce-4e10-a785-bb8cf9c90244)
+![Installation](https://github.com/user-attachments/assets/e7a9293d-3a8f-4f77-b06b-c1040ce5b356)
 
-result_label = tk.Label(root, text="", bg ="white", fg="red", font=("Arial", 12))
-result_label.pack()
-
-root.mainloop()
