@@ -87,23 +87,34 @@ def predict_email(text):
 # Example usage
 print(predict_email("Please verify your account information"))
 
-#UI
-import tkinter as tk     
-def predict():
-    email_text = text_entry.get("1.0", tk.END)
-    prediction = predict_email(email_text)
-    result_label.config(text=f"Prediction: {prediction}")
+import tkinter as tk
 
+# ---------- GUI Code ---------- #
+def analyze():
+    email = email_input.get("1.0", tk.END).strip()
+    if not email:
+        result_label.config(text="Please enter some email text.")
+    else:
+        prediction = predict_email(email)
+        result_label.config(text=f"Prediction: {prediction}")
+
+# GUI window
 root = tk.Tk()
-root.title("Phishing Email Predictor")
+root.title("Phishing Email Analyzer")
+root.geometry("600x400")
+root.config(bg="#eebaba")
 
-text_entry = tk.Text(root, height=10, width=50, bg="lightgrey", fg="black", font=("Arial", 12))
-text_entry.pack()
+# Email input box
+email_input = tk.Text(root, height=10, width=60, font=("Arial", 12), wrap="word")
+email_input.pack(pady=20)
 
-predict_button = tk.Button(root, text="Predict", command=predict, bg="blue", fg="white", font=("Arial", 12))
-predict_button.pack()
+# Analyze button
+analyze_button = tk.Button(root, text="Analyze", command=analyze,
+                           bg="#001aff", fg="white", font=("Arial", 12), padx=10, pady=5)
+analyze_button.pack()
 
-result_label = tk.Label(root, text="", bg ="white", fg="red", font=("Arial", 12))
-result_label.pack()
+# Result label
+result_label = tk.Label(root, text="", font=("Arial", 14), bg="#f4f4f4", fg="blue")
+result_label.pack(pady=20)
 
 root.mainloop()
