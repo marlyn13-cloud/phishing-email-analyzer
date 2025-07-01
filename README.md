@@ -34,9 +34,9 @@ This project simplifies the complex task of email threat detection with an autom
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Getting Started:**
-
-- clone Git in terminal: git clone https://github.com/marlyn13-cloud/phishing-email-analyzer
-- run python script in terminal: python phishing-email-analyzer.py
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Clone Git in terminal: git clone https://github.com/marlyn13-cloud/phishing-email-analyzer
+- Run python script in terminal: python phishing-email-analyzer.py
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Sample Usage:**
