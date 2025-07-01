@@ -55,9 +55,15 @@ data = {
         "Your password will expire soon. Change it now.",
         "Thank you for your purchase! Your order is confirmed.",
         "Alert: Suspicious activity detected in your account.",
-        "Join our community and start networking today!"
+        "Join our community and start networking today!",
+        "Click here to verify your identity of your account.",
+        "Urgent: Your payment information needs to be updated immediately.",
+        "Congratulations! You've been selected for a special offer. Claim your reward now.",
+        "Your meeting is confirmed for next Tuesday at 3 PM.",
+        "Thank you for your recent purchase. Your order will be shipped soon.",
+        "Join us for our upcoming webinar on cybersecurity trends. Register now to secure your spot."
     ],
-    "label": [1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]  # 1 = Phishing, 0 = Legitimate
+    "label": [1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0]  # 1 = Phishing, 0 = Legitimate
 }
 
 df = pd.DataFrame(data)
@@ -118,3 +124,12 @@ result_label = tk.Label(root, text="", font=("Arial", 14), bg="#f4f4f4", fg="blu
 result_label.pack(pady=20)
 
 root.mainloop()
+
+#executes program for other users
+from cx_Freeze import setup, Executable     
+setup(
+    name = "phishing email detector",
+    version = "0.1",
+    description = "This program detects phishing emails using machine learning.",
+    executables = [Executable("phishing-email-analyzer.py")]
+)
