@@ -31,9 +31,12 @@ This project simplifies the complex task of email threat detection with an autom
 -**Seamless Integration: ** Fits smoothly into existing email security workflows for proactive defense. 
 
 -**Explanability & Insights:** Offers transparency into detection decisions, aiding security analysis.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Getting Started:**
 
-![Getting Started](https://github.com/user-attachments/assets/6b893dc2-05ce-4e10-a785-bb8cf9c90244)
-![Installation](https://github.com/user-attachments/assets/e7a9293d-3a8f-4f77-b06b-c1040ce5b356)
+- clone Git in terminal: git clone https://github.com/marlyn13-cloud/phishing-email-analyzer
+- run python script in terminal: python phishing-email-analyzer.py
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Sample Usage:**
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
