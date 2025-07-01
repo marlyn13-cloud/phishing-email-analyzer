@@ -35,8 +35,10 @@ This project simplifies the complex task of email threat detection with an autom
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Getting Started:**
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Download Python from the following website for Windows or macOS: https://www.python.org/downloads/
+-Terminal Window: pip install cx_Freeze
 - Clone Git in terminal: git clone https://github.com/marlyn13-cloud/phishing-email-analyzer
-- Run python script in terminal: python phishing-email-analyzer.py
+- Run Python script in the terminal: python phishing-email-analyzer.py
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Sample Usage:**
