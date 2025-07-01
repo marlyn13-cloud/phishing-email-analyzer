@@ -28,9 +28,10 @@ This project simplifies the complex task of email threat detection with an autom
 
 -**Model Training & evaluation:** Facilitates easy training and fine-tuning of the classifier.
 
--**Seamless Integration: ** Fits smoothly into existing email security workflows for proactive defense. 
+-**Seamless Integration:** Fits smoothly into existing email security workflows for proactive defense. 
 
 -**Explanability & Insights:** Offers transparency into detection decisions, aiding security analysis.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Getting Started:**
 
