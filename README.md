@@ -45,3 +45,6 @@ This project simplifies the complex task of email threat detection with an autom
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ![legit](https://github.com/user-attachments/assets/7309d55b-b26a-4b4d-9d01-7edae3da67e4)
 ![phishing](https://github.com/user-attachments/assets/be54fc7f-59bf-404d-908d-67c9a089fd72)
+![ex phi](https://github.com/user-attachments/assets/73a83fa5-b7be-4819-8ae3-a85898d98c79)
+![jes](https://github.com/user-attachments/assets/5b624f76-cd1c-4641-9258-eb1ca6c31e6a)
+
