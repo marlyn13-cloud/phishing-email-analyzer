@@ -10,31 +10,6 @@ from sklearn.metrics import classification_report
 nltk.download('punkt')
 nltk.download('stopwords')
 
-import streamlit as st
-import joblib
-
-st.title("🛡️ Phishing Email Analyzer")
-
-st.write("Paste the **email content** below. The AI model will predict if it's a phishing attempt.")
-
-email_body = st.text_area("📩 Email Body")
-
-# Example feature extraction (replace with yours)
-def extract_features(text):
-    # Dummy feature vector: [has_urgent_words, has_links, is_short]
-    has_urgent = int("urgent" in text.lower() or "action required" in text.lower())
-    has_links = int("http" in text.lower() or "www" in text.lower())
-    is_short = int(len(text) < 100)
-    return [has_urgent, has_links, is_short]
-
-if st.button("Analyze"):
-    if email_body.strip() == "":
-        st.warning("Please paste some email text.")
-    else:
-        features = extract_features(email_body)
-        result = model.predict([features])[0]
-        st.success("🟢 This email looks safe!" if result == 0 else "🔴 Warning: This email looks like phishing.")
-
 def clean_text(text):
     """
     Cleans the input text by removing punctuation, converting to lowercase,
